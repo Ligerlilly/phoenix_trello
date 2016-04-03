@@ -19,6 +19,8 @@ defmodule PhoenixTrello.User do
   If no params are provided, an invalid changeset is returned
   with no validation performed.
   """
+  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
+
   def changeset(model, params \\ :empty) do
     model
     |> cast(params, @required_fields, @optional_fields)
@@ -28,8 +30,6 @@ defmodule PhoenixTrello.User do
     |> unique_constraint(:email, message: "Email already taken")
     |> generate_encrypted_password
   end
-
-  @derive {Poison.Encoder, only: [:id, :first_name, :last_name, :email]}
 
   defp geneerate_encrypted_password(current_changeset) do
     case current_changeset do
