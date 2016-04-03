@@ -37,7 +37,7 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :phoenix_trello, PhoenixTrello.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "",
+  username: "postgres",
   password: "",
   database: "phoenix_trello_dev",
   hostname: "localhost",
