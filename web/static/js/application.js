@@ -6,6 +6,6 @@ import Root from './containers/root';
 
 const store = configureStore(browserHistory);
 const target = document.getElementById('main_container');
-const node = <Root routerHistory={browserHistory} store={store} />
+const node = <Root routerHistory={browserHistory} store={store} />;
 
 ReactDOM.render(node, target);
